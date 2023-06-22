@@ -1,0 +1,13 @@
+
+        browser = webdriver.Chrome()
+        browser.get('https://www.nic.ru/whois/')
+        input1 = browser.find_element_by_xpath('//*[@id="rc-web-client"]/div/div/div[1]/main/div[1]/div[1]/div/div/div/input')
+        input1.send_keys(url)
+        time.sleep(2)
+        button = browser.find_element_by_xpath('//*[@id="rc-web-client"]/div/div/div[1]/main/div[1]/div[1]/div/button/span[1]')
+        button.click()
+        time.sleep(5)
+        infa = browser.find_element_by_xpath('//*[@id="rc-web-client"]/div/div/div[1]/main/div[1]/div[4]/div/div[2]/a[1]')
+        infa1 = infa.text
+        #print(infa1)
+        bot.send_message(infa1)
